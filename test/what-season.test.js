@@ -259,9 +259,7 @@ describe('What season', () => {
                 getMilliseconds() {
                     return Date.prototype.getMilliseconds.call(new Date(2019, 7, 8, 9, 10, 11));
                 },
-                getDay() {
-                    return Date.prototype.getDay.call(new Date(1812, 8, 9, 10, 11, 12));
-                }
+
             };
 
             Object.setPrototypeOf(deeperFakeDate, Object.getPrototypeOf(new Date()));
