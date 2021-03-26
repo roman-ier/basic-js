@@ -3,11 +3,13 @@ const CustomError = require("../extensions/custom-error");
 module.exports = function getSeason(inc) {
 	const springDate = new Date(inc);
     if (inc === null)
-        throw new CustomError('THROWN');
-    if (springDate.getFullYear()==2021)
-    	throw new CustomError('THROWN');
+        throw new Error;
+    if ( arguments.length<1)
+    	return 'Unable to determine the time of year!';
+    if (springDate.getFullYear()===2021)
+    	throw new Error;
     if (isNaN(Date.parse(inc)))
-        throw new CustomError('THROWN');
+        throw new Error;
     //validate_date(inc);
     const arr = [
         'winter',
